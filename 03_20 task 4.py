@@ -1,20 +1,19 @@
 
 #task 1
-def F(n):
+def f(n):
     if n % 5 == 0:
         return('Число делится на 5 без остатка')
     else:
         return('Число не делится на 5 без остатка')
 
-#print('Введите число')
-#n=input()
-#n=int(n)
-#print(F(n))
+print('Введите число')
+n=int(input())
+print(f(n))
 
 
 
 #task 2
-def G(a):
+def g(a):
     if a==0:
         return ('ZeroDivisionError')
     else:
@@ -26,14 +25,14 @@ def G(a):
 #if a.isalpha():
 #    print('ValueError')
 #else:
-#    print(G(int(a)))
+#    print(g(int(a)))
 
 
 #task 3
-def H():
-    den, mes, god=map(int, b.split('.'))
-    if 1<=den<=31 and 1<=mes<=12:
-        if den*mes==int(str(god)[-2:]):
+def h():
+    den, mes, god = map(int, b.split('.'))
+    if 1 <= den <= 31 and 1 <= mes <= 12:
+        if den * mes == int(str(god)[-2:]):
             return ('True')
         else:
             return ('False')
@@ -43,24 +42,25 @@ def H():
 
 #print('Введите дату день.месяц.год')
 #b=(input())
-#print(H())
+#print(h())
 
-#task 3
-def J(l):
-    if len(l)%2==0:
-        dl=len(l)//2
-        pe=(sum(int(i)) for i in l[:dl])
-        vt=(sum(int(i)) for i in l[dl:])
-        if pe==vt:
-            return('билет счастливый')
+#task 4
+def f(bil):
+    perv_pol = 0
+    vtor_pol = 0
+    if len(bil) % 2 == 0:
+        dl=len(bil) // 2
+        for i in bil[:dl]:
+            perv_pol = perv_pol + int(i)
+        for j in bil[dl:]:
+            vtor_pol = vtor_pol + int(j)
+        if perv_pol == vtor_pol:
+            return ('билет счастливый')
         else:
-            return ('билет не счастливый')
+            return('билет не счастливый')
     else:
-        print('Ошибка: Количество цифр в билете должно быть чётным')
+        return('Ошибка: Количество цифр в билете должно быть чётным')
 
-
-
-
-
-print('Введите номер билета')
-l=(input())
+#print('Введите номер билета')
+#bil=(input())
+#print(f(bil))
